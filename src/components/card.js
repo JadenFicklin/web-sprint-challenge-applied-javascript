@@ -17,9 +17,35 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+
+  const div = document.createElement("div");
+  div.setAttribute("style", "width: 100px; height: 100px; background: blue;");
+
+  let cardWrap = document.createElement("div");
+  let headDiv = document.createElement("div");
+  let authorDiv = document.createElement("div");
+  let picWrap = document.createElement("div");
+  let imgAuthor = document.createElement("img");
+  let authorSpan = document.createElement("span");
+
+  cardWrap.classList.add("card");
+  headDiv.classList.add("headline");
+  authorDiv.classList.add("author");
+  picWrap.classList.add("img-container");
+
+  cardWrap.appendChild(headDiv);
+  cardWrap.appendChild(authorDiv);
+  authorDiv.appendChild(picWrap);
+  picWrap.appendChild(imgAuthor);
+  authorDiv.appendChild(authorSpan);
+
+  const target_element = document.getElementsByClassName("cards-container");
+  target_element[0].appendChild(div);
+  console.log(target_element);
+};
 
 const cardAppender = (selector) => {
+  Card();
   // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
@@ -28,6 +54,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+};
 
-export { Card, cardAppender }
+export { Card, cardAppender };
